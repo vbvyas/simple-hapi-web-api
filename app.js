@@ -8,3 +8,6 @@ server.route({
     res('app is running');
   }
 });
+
+// Start the server
+server.start();
