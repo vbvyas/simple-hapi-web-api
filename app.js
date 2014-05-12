@@ -9,5 +9,13 @@ server.route({
   }
 });
 
+server.route({
+  method: 'GET',
+  path: '/test',
+  handler: function (req, res) {
+    res();
+  }
+})
+
 // Start the server
 server.start();
