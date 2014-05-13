@@ -27,5 +27,19 @@ server.route({
   }
 })
 
+server.route({
+  method: 'GET',
+  path: '/test/{id?}', // ? is a regex 0 or 1 id
+  handler: function (req, res) {
+    if (req.params.id) { // if id not null
+      if (req.params.id >= test.length) {
+        return res('Invalid ID').code(404);
+      }
+      return res(test[req.params.id]);
+    }
+    res(test); // return all the data
+  }
+})
+
 // Start the server
 server.start();
