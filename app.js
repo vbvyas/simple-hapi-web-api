@@ -11,6 +11,10 @@ server.route({
 
 var test = [
   {
+    "id": 0,
+    "data": "test"
+  },
+  {
     "id": 1,
     "data": "test"
   },
