@@ -29,7 +29,7 @@ server.route({
   handler: function (req, res) {
     res(test);
   }
-})
+});
 
 server.route({
   method: 'GET',
@@ -43,7 +43,27 @@ server.route({
     }
     res(test); // return all the data
   }
-})
+});
+
+server.route({
+  method: 'POST',
+  path: '/test',
+  config: {
+    handler: function (req, res) {
+      var newdata = {
+        id: test.length,
+        data: req.payload.data
+      };
+      test.push(newData);
+      res(newData);
+    },
+    validate: {
+      payload: {
+        data: Hapi.types.String().required()
+      }
+    }
+  }
+});
 
 // Start the server
 server.start();
