@@ -65,5 +65,16 @@ server.route({
   }
 });
 
+server.route({
+  method: 'DELETE',
+  path: '/test/{id}',
+  handler: function(req, res) {
+    if (req.params.id >= test.length) {
+      return res('No data found').code(404);
+    }
+    test.splice(req.params.id, 1);
+    res(true);
+  }
+})
 // Start the server
 server.start();
