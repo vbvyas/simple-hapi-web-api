@@ -9,11 +9,12 @@ Install hapi.js
     
 Try the REST api:
 
-Navigate to (http://localhost:3000)[http://localhost:3000]
+Navigate to [http://localhost:3000](http://localhost:3000)
 
 You'll get the message: 'app is running'
 
     Request
+    ----------------------------
     
     GET /test
     GET /test/1
