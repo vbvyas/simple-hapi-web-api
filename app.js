@@ -77,4 +77,6 @@ server.route({
   }
 })
 // Start the server
-server.start();
+server.start(function() {
+  console.log("Hapi server started @", server.info.uri)
+});
